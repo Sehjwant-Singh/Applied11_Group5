@@ -1,0 +1,17 @@
+sku,name,brand,description,category,subcategory,price,member_price,quantity,is_food,expiry_date,ingredients,storage,allergens
+BK001,Intro to Python,O'Reilly,Programming textbook for beginners,Books,Textbook,59.99,49.99,15,False,,,,
+BK002,Machine Learning Basics,Pearson,An essential guide to ML concepts,Books,Textbook,79.99,69.99,8,False,,,,
+FD001,Organic Moringa Powder,NutriThrive,Premium moringa leaf powder for health supplements,Food,Superfoods,19.99,15.99,25,True,2026-08-30,Moringa leaves powder,"Store in a cool, dry place",May contain traces of nuts
+FD002,Dried Curry Leaves,NutriThrive,Naturally dried aromatic curry leaves,Food,Herbs & Spices,9.99,7.99,30,True,2026-05-20,Curry leaves,Keep in airtight container away from sunlight,None
+FD003,Black Tea - Darjeeling,NutriThrive,Premium loose-leaf black tea,Food,Beverages,14.99,11.99,34,True,2027-01-10,Black tea leaves,"Keep dry, avoid moisture",None
+FD004,Wholegrain Pasta,San Remo,High-fiber wholegrain pasta,Food,Pantry,4.99,3.99,50,True,2025-12-15,Durum wheat,Store in cool dry place,Contains gluten
+FD005,Protein Energy Bar,PowerUp,Chocolate peanut flavor protein bar,Food,Snacks,3.49,2.99,60,True,2025-06-12,Peanuts,Store below 25C,Contains peanuts
+EL001,Wireless Mouse,Logitech,Ergonomic wireless mouse with long battery,Electronics,Accessories,39.99,34.99,20,False,,,,
+EL002,USB-C Charger,Anker,Fast charging USB-C power adapter 45W,Electronics,Chargers,29.99,25.99,35,False,,,,
+EL003,Noise Cancelling Headphones,Sony,Wireless over-ear headphones with noise cancellation,Electronics,Audio,199.99,179.99,10,False,,,,
+ST001,Stapler,OfficeMate,Heavy-duty stapler for office use,Stationery,Office Supplies,12.99,9.99,40,False,,,,
+ST002,Notebook A5 PaperMate,PaperMate,College ruled A5 notebook,Stationery,Notebooks,4.99,3.99,80,False,,,,
+FD006,Instant Coffee,Nescafe,Premium blend instant coffee powder,Food,Beverages,12.49,9.99,45,True,2026-10-01,Coffee beans,Store in a cool dry place,None
+FD007,Organic Honey,Capilano,100% pure Australian honey,Food,Sweeteners,8.99,7.49,70,True,2026-03-12,Honey,Store below 25C,None
+FD008,Almond Milk,MilkyWay,Unsweetened almond milk (1L carton),Food,Beverages,3.49,2.99,17,True,2025-04-01,Almonds and water,Refrigerate after opening,Contains nuts
+222,ww,dd,dd,Books,dd,4.00,2.00,2,False,,,,

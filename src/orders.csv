@@ -1,0 +1,7 @@
+order_id,email,datetime,fulfilment,delivery_address,store_id,promo_code,promo_discount,student_discount,delivery_fee,subtotal,total,lines_json
+ORD-817CE7C6,student@student.monash.edu,2025-10-18 01:18:01,DELIVERY,"8 College Walk, Clayton VIC",,STAFF5,0.4,0.0,0.0,8.0,7.6,"[{""sku"": ""222"", ""name"": ""ww"", ""qty"": 2, ""unit_price"": 4.0, ""member_price"": 2.0, ""line_total"": 8.0}]"
+ORD-AA9221A9,student@student.monash.edu,2025-10-23 18:16:05,DELIVERY,Test Address,,,0.0,0.0,0.0,199.99,199.99,"[{""sku"": ""EL003"", ""name"": ""Noise Cancelling Headphones"", ""qty"": 1, ""unit_price"": 199.99, ""member_price"": 179.99, ""line_total"": 199.99}]"
+ORD-ED141904,student@student.monash.edu,2025-10-23 18:16:05,DELIVERY,Test Address,,,0.0,0.0,0.0,25.98,25.98,"[{""sku"": ""ST001"", ""name"": ""Stapler"", ""qty"": 2, ""unit_price"": 12.99, ""member_price"": 9.99, ""line_total"": 25.98}]"
+ORD-AABF3868,student@student.monash.edu,2025-10-23 18:16:57,DELIVERY,Test Address,,,0.0,0.0,0.0,25.98,25.98,"[{""sku"": ""ST001"", ""name"": ""Stapler"", ""qty"": 2, ""unit_price"": 12.99, ""member_price"": 9.99, ""line_total"": 25.98}]"
+ORD-DEDDD3BD,student@student.monash.edu,2025-10-23 18:17:23,DELIVERY,Test Address,,,0.0,0.0,0.0,25.98,25.98,"[{""sku"": ""ST001"", ""name"": ""Stapler"", ""qty"": 2, ""unit_price"": 12.99, ""member_price"": 9.99, ""line_total"": 25.98}]"
+ORD-A2889ED0,student@student.monash.edu,2025-10-23 18:18:38,PICKUP,,S2,,0.0,0.4,0.0,8.0,7.6,"[{""sku"": ""222"", ""name"": ""ww"", ""qty"": 2, ""unit_price"": 4.0, ""member_price"": 2.0, ""line_total"": 8.0}]"
