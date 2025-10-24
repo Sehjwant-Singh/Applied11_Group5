@@ -195,19 +195,19 @@ class NewMonashPromotion(PromotionStrategy):
 class StaffPromotion(PromotionStrategy):
     """
     STAFF5 promotion strategy.
-    5% off products subtotal - available to all customers with no restrictions.
+    5% off products subtotal - available ONLY to Monash staff members.
     Demonstrates second promotion strategy (requirement for 4-member teams).
     
     Business Justification:
-    - Rewards Monash staff members
+    - Rewards Monash staff members exclusively
     - Lower discount rate encourages repeat purchases
-    - No restrictions to maximize usage
+    - Staff-only restriction maintains exclusivity
     - Can be combined with VIP pricing
     """
     
     CODE = "STAFF5"
     DISCOUNT_RATE = 0.05  # 5%
-    DESCRIPTION = "5% off products subtotal - available for all orders"
+    DESCRIPTION = "5% off products subtotal - available for Monash staff only"
     
     def __init__(self):
         """Initialize Staff promotion with predefined values."""
@@ -222,9 +222,10 @@ class StaffPromotion(PromotionStrategy):
         Checks eligibility for STAFF5 promotion.
         
         Business Rules:
-        - No restrictions - available to all customers
+        - ONLY available to Monash staff members
+        - Staff identified by: @monash.edu email AND is_monash_student = False
         - Works with both DELIVERY and PICKUP
-        - Can be used multiple times
+        - Can be used multiple times by eligible staff
         
         Args:
             customer: Customer object
@@ -232,10 +233,39 @@ class StaffPromotion(PromotionStrategy):
             order_repository: OrderRepository (not used for this promo)
             
         Returns:
-            tuple: (eligible: bool, reason: str) - always eligible
+            tuple: (eligible: bool, reason: str)
         """
-        # No restrictions for STAFF5
+        # Check if customer is a Monash staff member
+        if not self._is_staff_member(customer):
+            return False, "STAFF5 promotion is only available to Monash staff members"
+        
         return True, ""
+    
+    def _is_staff_member(self, customer) -> bool:
+        """
+        Checks if customer is a Monash staff member.
+        
+        Staff identification criteria:
+        - Email domain must be @monash.edu (not @student.monash.edu)
+        - is_monash_student must be False
+        
+        Args:
+            customer: Customer object
+            
+        Returns:
+            bool: True if customer is staff member
+        """
+        try:
+            email = customer.get_email().lower()
+            is_student = customer.is_student()
+            
+            # Staff members have @monash.edu email and are NOT students
+            return (email.endswith("@monash.edu") and 
+                   not email.endswith("@student.monash.edu") and 
+                   not is_student)
+        except (AttributeError, TypeError):
+            # If customer object doesn't have expected methods, not staff
+            return False
     
     def get_eligibility_requirements(self) -> str:
         """
@@ -244,11 +274,11 @@ class StaffPromotion(PromotionStrategy):
         Returns:
             str: Requirements description
         """
-        return "Available for all customers on all orders (delivery or pickup)"
+        return "Available only to Monash staff members (@monash.edu email, not students)"
     
     def __str__(self) -> str:
         """String representation."""
-        return "STAFF5: 5% off all orders"
+        return "STAFF5: 5% off all orders (staff only)"
 
 
 class PromotionFactory:

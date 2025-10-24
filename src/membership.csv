@@ -1,2 +1,4 @@
 email,action,years,amount,datetime,notes
 staff@monash.edu,BUY,2,40.00,2025-10-18T02:29:53,
+student@student.monash.edu,BUY,2,40.00,2025-10-24T11:17:34,
+student@student.monash.edu,CANCEL,0,0.00,2025-10-24T11:17:43,non-refundable

@@ -496,7 +496,7 @@ Subtotal: $39.98
 Confirm delivery address? (y/n): y
 Available Promotion Codes:
 - NEWMONASH20: 20% off products subtotal - first-time PICKUP order only
-- STAFF5: 5% off products subtotal - available for all orders
+- STAFF5: 5% off products subtotal - available for Monash staff only
 
 Apply a promo code? (y/n): n
 ```
@@ -583,7 +583,7 @@ FD003    Black Tea - Darjeeling   NutriThrive Food        14.99    34
 > 5
 Available Promotion Codes:
 - NEWMONASH20: 20% off products subtotal - first-time PICKUP order only
-- STAFF5: 5% off products subtotal - available for all orders
+- STAFF5: 5% off products subtotal - available for Monash staff only
 ```
 
 ### Apply Promotion Code

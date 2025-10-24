@@ -295,6 +295,65 @@ class ProductRepository(BaseRepository):
             int: Product count
         """
         return len(self._products)
+    
+    def decrement_stock(self, sku: str, quantity: int) -> bool:
+        """
+        Decrements stock quantity for a product.
+        
+        Args:
+            sku (str): Product SKU
+            quantity (int): Quantity to decrement
+            
+        Returns:
+            bool: True if successful, False if insufficient stock or product not found
+        """
+        product = self.find_by_sku(sku)
+        if not product:
+            return False
+        
+        if product.reduce_quantity(quantity):
+            self._persist()  # Save changes to CSV
+            return True
+        return False
+    
+    def reduce_stock(self, sku: str, quantity: int) -> bool:
+        """
+        Alias for decrement_stock method.
+        
+        Args:
+            sku (str): Product SKU
+            quantity (int): Quantity to reduce
+            
+        Returns:
+            bool: True if successful, False if insufficient stock or product not found
+        """
+        return self.decrement_stock(sku, quantity)
+    
+    def update_stock(self, sku: str, quantity_change: int) -> bool:
+        """
+        Updates stock quantity by a specified amount (positive or negative).
+        
+        Args:
+            sku (str): Product SKU
+            quantity_change (int): Amount to change (positive to add, negative to subtract)
+            
+        Returns:
+            bool: True if successful, False if product not found or invalid change
+        """
+        product = self.find_by_sku(sku)
+        if not product:
+            return False
+        
+        current_qty = product.get_quantity()
+        new_qty = current_qty + quantity_change
+        
+        if new_qty < 0:
+            return False  # Cannot have negative stock
+        
+        if product.set_quantity(new_qty):
+            self._persist()  # Save changes to CSV
+            return True
+        return False
 
 
 class UserRepository(BaseRepository):

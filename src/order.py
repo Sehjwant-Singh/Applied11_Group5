@@ -388,12 +388,14 @@ class OrderManager:
             sku = si.get_sku()
             qty = int(si.get_quantity())
             # try common names
-            did = (
+            inventory_updated = (
                 _call(self._product_repo, "decrement_stock", sku, qty) or
                 _call(self._product_repo, "reduce_stock", sku, qty) or
                 _call(self._product_repo, "update_stock", sku, -qty)
             )
-            # if all return None but didn't throw, assume OK
+            # Check if inventory update was successful
+            if not inventory_updated:
+                return False, f"Failed to update inventory for product {sku}. Insufficient stock or product not found."
 
         # 3) Save order record
         record = order._as_record()

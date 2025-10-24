@@ -1,4 +1,4 @@
 email,password,role,first_name,last_name,mobile,address,is_monash_student,vip_years,vip_expires,funds
-student@student.monash.edu,Monash1234!,CUSTOMER,Stu,Dent,0400000001,"8 College Walk, Clayton VIC",1,0,,1000.00
+student@student.monash.edu,Monash1234!,CUSTOMER,Stu,Dent,0400000001,"8 College Walk, Clayton VIC",1,2,2025-10-24,960.00
 staff@monash.edu,Monash1234!,CUSTOMER,Sta,Ff,0400000002,"1 Wellington Rd, Clayton VIC",0,2,2027-10-18,960.00
 admin@monash.edu,Admin1234!,ADMIN,Ad,Min,0400000003,,0,0,,0.00
